@@ -16,7 +16,9 @@ On a phone, open the link in Chrome, tap the three dots, then **Desktop site**, 
 
 ## What's inside
 
-**schedule.xlsx** (or **schedule.csv**) is the master plan. One row per post per platform: date, Lagos time, platform, format, which files to upload and which caption file to use. Start here.
+**plan90.xlsx** (or **plan90.csv**) is the 90 day plan: every post from Day 1 to Day 90 with its hook, what it teaches and its call to action.
+
+**schedule.xlsx** (or **schedule.csv**) is the posting schedule for everything approved so far. One row per post per platform: date, Lagos time, platform, format, which files to upload and which caption file to use. Start here.
 
 **media/v2/** holds one folder per carousel (for example d01a). Inside: the slides as JPGs (1080 by 1350, post them in number order) plus the PDF used for LinkedIn.
 
