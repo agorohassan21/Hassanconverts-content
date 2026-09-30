@@ -1,0 +1,142 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><title>HassanConverts Profile Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: one narrow column, sticky platform chips, each field is a paste card with its own Copy button */
+:root{
+  --bg:#140C08; --panel:#1E120C; --panel2:#2A1A11; --line:rgba(212,178,133,.22);
+  --fg:#F9EAD2; --muted:#C7AE8C; --accent:#D4B285; --accent2:#E9CD9B; --ink:#1E120C;
+  --ok:#5BD17A; --warn:#F2B84B; --bad:#FF7A6E;
+  --display:'Instrument Serif',Georgia,serif; --body:'Barlow','Helvetica Neue',Arial,sans-serif; --label:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#F6EFE4; --panel:#FFFDF8; --panel2:#EFE4D3; --line:rgba(94,64,36,.2);
+  --fg:#23150D; --muted:#6E5640; --accent:#8A5A22; --accent2:#6B4318; --ink:#FFFDF8;
+  --ok:#23864A; --warn:#A86A00; --bad:#C0392B; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#F6EFE4; --panel:#FFFDF8; --panel2:#EFE4D3; --line:rgba(94,64,36,.2);
+  --fg:#23150D; --muted:#6E5640; --accent:#8A5A22; --accent2:#6B4318; --ink:#FFFDF8;
+  --ok:#23864A; --warn:#A86A00; --bad:#C0392B; color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:24px 64px}
+.eyebrow{font-family:var(--label);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(40px,10vw,60px);line-height:1;margin:10px 0 12px;text-wrap:balance}
+h2{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(30px,7vw,40px);line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.lead{color:var(--muted);max-width:60ch}
+.mode{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:20px 0 6px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:12px;padding:3px;background:var(--panel)}
+.seg button{border:0;background:transparent;color:var(--muted);font:700 15px var(--body);padding:9px 14px;border-radius:9px;cursor:pointer;min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--ink)}
+.hint{font-size:14px;color:var(--muted)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-inline:-16px;padding:10px 16px;border-bottom:1px solid var(--line);display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;text-decoration:none;color:var(--fg);font:600 14px var(--body);border:1px solid var(--line);border-radius:999px;padding:7px 13px;background:var(--panel)}
+nav a:hover{border-color:var(--accent)}
+section{margin-top:34px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:70px}
+.sechead{display:flex;flex-direction:column;gap:4px;margin-bottom:4px}
+.where{font-size:14px;color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.lbl{font-family:var(--label);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:700 12px var(--body);border-radius:999px;padding:3px 9px;border:1px solid var(--line);color:var(--muted);font-variant-numeric:tabular-nums}
+.chip.ok{color:var(--ok);border-color:currentColor}.chip.over{color:var(--bad);border-color:currentColor}
+.chip.when{color:var(--warn);border-color:currentColor}
+.chip.changed{color:var(--ink);background:var(--accent);border-color:var(--accent)}
+.text{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--panel2);border-radius:10px;padding:12px;font-size:16px;margin:0;font-family:var(--body);user-select:all;-webkit-user-select:all}
+.row{display:flex;gap:10px;align-items:flex-start}
+.row .text{flex:1;min-width:0}
+.copy{flex:none;border:0;cursor:pointer;background:var(--accent);color:var(--ink);font:800 14px var(--body);border-radius:10px;padding:10px 14px;min-height:44px;min-width:78px}
+.copy.done{background:var(--ok)}
+.note{font-size:14px;color:var(--muted)}
+.plain{font-size:16px}
+ul.stories{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.links{display:flex;flex-direction:column;gap:8px}
+.links .text{font-size:14px}
+.remove{border-color:var(--bad)}
+.remove label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.remove input{margin-top:4px;width:18px;height:18px;accent-color:var(--bad);flex:none}
+.remove input:checked + span{text-decoration:line-through;color:var(--muted)}
+.foot{margin-top:40px;font-size:13px;color:var(--muted)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">@hassanconverts · profile kit</div>
+  <h1>Every field, ready to paste.</h1>
+  <p class="lead">Instagram, TikTok, LinkedIn, Facebook, WhatsApp Business and Linktree. Tap Copy, open the app, paste. The counter shows each line against the app's limit.</p>
+  <div class="mode">
+    <div class="seg" role="group" aria-label="Which version to show">
+      <button id="m-now" type="button" aria-pressed="true">Today</button>
+      <button id="m-oct" type="button" aria-pressed="false">From Wed 21 Oct</button>
+    </div>
+    <span class="hint" id="modehint">The Leak Map stays off your profiles until launch morning.</span>
+  </div>
+  <nav id="nav" aria-label="Platforms"></nav>
+  <section id="remove">
+    <div class="sechead"><h2>Take these off first</h2><p class="where">Everywhere they appear. Tick each one as you go.</p></div>
+    <div class="card remove" id="removelist"></div>
+  </section>
+  <div id="platforms"></div>
+  <p class="foot">Written for Agoro Hassan. The Leak Check link works for visitors only after you open it, tap Share and choose Anyone with the link.</p>
+</div>
+
+<script>
+const DATA = {"platforms": [{"id": "instagram", "name": "Instagram", "where": "Profile → Edit profile", "fields": [{"label": "Name", "limit": 30, "now": "Hassan | Conversion Copywriter", "note": "This line is searchable, so it carries the word people type most: copywriter."}, {"label": "Username", "keep": true, "now": "hassanconverts", "note": "Keep it."}, {"label": "Bio", "limit": 150, "now": "Your offer is good. Your page is leaking.\nSales pages, funnels & emails for ecommerce, SaaS & coaches.\nI write and build it. Lagos 🇳🇬\nFree tools 👇", "oct": "Your offer is good. Your page is leaking.\nSales pages, funnels & emails for ecommerce, SaaS & coaches.\nWritten and built in Lagos.\nBook a Leak Map 👇", "note": "On launch morning, Wed 21 Oct, switch to the launch version (tap From Wed 21 Oct above)."}, {"label": "Link title", "limit": 30, "now": "Free tools", "oct": "Book a Leak Map", "note": "Links → Add external link. URL below. The title is what shows under your bio."}, {"label": "Link URL", "now": "https://linktr.ee/Hassanconverts"}, {"label": "Contact options → WhatsApp", "now": "+234 706 498 0785", "note": "Edit profile → Contact options. Adds a WhatsApp button. Keep WhatsApp as the only contact button so every lead lands in one place."}, {"label": "Display category", "plain": "Off. Your name line already says what you do."}, {"label": "Highlight: Start here", "limit": 15, "now": "Start here", "note": "3 stories, each with your photo or a plain background:", "stories": ["I'm Hassan. I write sales pages and build them live, from Lagos.", "I write and build sales pages, landing pages and email funnels for ecommerce, supplement and SaaS brands, and for coaches.", "Start with a free tool. Tap the link. (add a link sticker to your Linktree)"]}, {"label": "Highlight: Free tools", "limit": 15, "now": "Free tools", "note": "2 stories with link stickers:", "stories": ["The Hook Scorecard: score your first line before you post it. For any business.", "The 5 minute Leak Check, for coaches and course creators: 15 yes or no questions that show where your funnel loses buyers."]}, {"label": "Highlight: My work", "limit": 15, "now": "My work", "note": "One screenshot per story, with a one line caption:", "stories": ["AIRUVA, a supplement brand: I wrote the sales page.", "Gluvera, a supplement brand: I wrote the page and built it.", "Brydge Africa, B2B trade and fintech: I wrote the website copy."]}, {"label": "Highlight: Leak Map", "limit": 15, "now": "Leak Map", "when": "Add on Wed 21 Oct", "note": "3 stories:", "stories": ["What you get: at least 3 specific leaks on your page, posts or ads and payment, each with the exact fix.", "3 working days. ₦50,000. If I can't find 3 real leaks, you pay nothing.", "To book: DM me MAP."]}, {"label": "Pinned posts", "plain": "Pin your Day 1 Lagos Logic post now. On 21 Oct, pin the Leak Map launch post next to it."}]}, {"id": "tiktok", "name": "TikTok", "where": "Profile → Edit profile", "fields": [{"label": "Name", "limit": 30, "now": "Hassan | Conversion Copywriter"}, {"label": "Bio", "limit": 80, "now": "Why buyers leave your page, and how to fix it. Sales pages, funnels, emails."}, {"label": "Website", "now": "https://linktr.ee/Hassanconverts", "note": "Only if TikTok shows you the Website field. Some accounts don't get it yet."}, {"label": "Username", "plain": "Keep hassanconvert2 for now. Changing it again resets how people find you."}]}, {"id": "linkedin", "name": "LinkedIn", "where": "Profile → pencil icons", "fields": [{"label": "Headline", "limit": 220, "now": "I write and build pages that sell | Sales pages, landing pages, email funnels and websites | For ecommerce, supplement and SaaS brands, coaches and consultants | Copy, design and build by one person | Lagos, Nigeria"}, {"label": "About", "limit": 2600, "now": "Most brands don't have a traffic problem. They have a leak.\n\nPeople click the ad. They read the page, open the email, maybe add to cart. Then they leave, and nobody can tell you where they fell out.\n\nThat's the part I work on.\n\nI'm Hassan, a conversion copywriter in Lagos. I write sales pages, landing pages, email sequences and funnels. I also design and build websites, including motion design, so the words and the page come from one person who is accountable from the research to the payment button.\n\nWho I've written for:\n• Supplement and wellness brands: sales page copy for AIRUVA, and the Gluvera page, written and built\n• B2B SaaS and fintech: website copy for Brydge Africa, a B2B trade and fintech platform\n• Ecommerce stores selling to Nigerian buyers\n\nHow I work:\n1. I read your buyers first: reviews, DMs, comments, sales calls. The best lines are usually already in their words.\n2. I find the leaks in five places: message, trust, friction, follow up and measurement.\n3. I fix them, in the copy and on the live page.\n\nStart free:\nGet the Hook Scorecard from my Featured section, or message me the word LEAK with a link to your page. I'll reply with one specific fix.\n\nMost mornings I post one lesson on why people don't buy, and what to fix. Follow if you sell anything online.", "oct": "Most brands don't have a traffic problem. They have a leak.\n\nPeople click the ad. They read the page, open the email, maybe add to cart. Then they leave, and nobody can tell you where they fell out.\n\nThat's the part I work on.\n\nI'm Hassan, a conversion copywriter in Lagos. I write sales pages, landing pages, email sequences and funnels. I also design and build websites, including motion design, so the words and the page come from one person who is accountable from the research to the payment button.\n\nWho I've written for:\n• Supplement and wellness brands: sales page copy for AIRUVA, and the Gluvera page, written and built\n• B2B SaaS and fintech: website copy for Brydge Africa, a B2B trade and fintech platform\n• Ecommerce stores selling to Nigerian buyers\n\nHow I work:\n1. I read your buyers first: reviews, DMs, comments, sales calls. The best lines are usually already in their words.\n2. I find the leaks in five places: message, trust, friction, follow up and measurement.\n3. I fix them, in the copy and on the live page.\n\nThe Leak Map:\nI go through your sales page, your posts or ads, and how people pay. You get at least 3 specific leaks, each with the exact fix, in 3 working days. ₦50,000. If I can't find 3 real leaks, you pay nothing. Message me MAP to book.\n\nOr start free:\nGet the Hook Scorecard from my Featured section, or message me the word LEAK with a link to your page. I'll reply with one specific fix.\n\nMost mornings I post one lesson on why people don't buy, and what to fix. Follow if you sell anything online.", "note": "On 21 Oct, the Leak Map paragraph goes in above “Start free”."}, {"label": "Experience: Title", "limit": 100, "now": "Conversion Copywriter and Funnel Builder", "note": "Add position. Company: HassanConverts. Employment type: Self employed. Location: Lagos, Nigeria. Start date: June 2024. Tick “I am currently working in this role”."}, {"label": "Experience: Description", "limit": 2000, "now": "I write and build pages that sell: sales pages, landing pages, email sequences, funnels and websites, including motion design. I research the buyers, write the copy, design the page and put it live.\n\nFor supplement and wellness brands, ecommerce stores, B2B SaaS and fintech companies, and coaches and consultants.\n\nWork I've done: sales page copy for AIRUVA, the Gluvera page (written and built), and website copy for Brydge Africa."}, {"label": "Intro: Current position", "plain": "Show HassanConverts as the position in your intro, so it sits under your name."}, {"label": "Contact info: Website", "now": "https://linktr.ee/Hassanconverts", "note": "Type: Portfolio."}, {"label": "Featured", "plain": "Add the Hook Scorecard link first, then the Leak Check (after you set it to Anyone with the link), then pin your best LinkedIn PDF post as it goes out.", "links": [["Hook Scorecard", "https://raw.githubusercontent.com/agorohassan21/Hassanconverts-content/main/free/The_Hook_Scorecard.pdf"], ["Leak Check", "https://claude.ai/artifact/FAQTw9Zrj3V7xan42nTbkP"]]}, {"label": "Services page", "limit": 500, "now": "Sales pages, landing pages, email funnels and websites for ecommerce, supplement and SaaS brands, coaches and consultants. I research your buyers, write the copy, design and build the page and put it live. Start free: message me LEAK.", "note": "Open to → Providing services. Pick: Copywriting, Email Marketing, Web Design, Content Strategy. Location: Lagos, and tick Remote."}]}, {"id": "facebook", "name": "Facebook", "where": "Your Page → Edit details (or Meta Business Suite → Settings)", "fields": [{"label": "Bio / Intro", "limit": 101, "now": "I write and build sales pages, landing pages and email funnels that sell. Ecommerce, SaaS, coaches.", "note": "Use the same line on your personal profile intro."}, {"label": "Category", "plain": "Type “Copywriting” and pick the closest match. Add Marketing Consultant as the second category."}, {"label": "Website", "now": "https://linktr.ee/Hassanconverts"}, {"label": "Action button", "plain": "Send WhatsApp message, to +234 706 498 0785."}, {"label": "Location", "plain": "Lagos, Nigeria. City only, no street address."}, {"label": "Page name", "plain": "Keep the current name. A rename goes to Facebook for review and notifies your followers."}]}, {"id": "whatsapp", "name": "WhatsApp Business", "where": "Settings → Business tools", "fields": [{"label": "Business name", "limit": 60, "now": "Agoro Hassan | HassanConverts", "note": "Business profile → Name."}, {"label": "Category", "plain": "Advertising/Marketing"}, {"label": "Description", "limit": 512, "now": "I write and build pages that sell: sales pages, landing pages, email funnels and websites for ecommerce, supplement and SaaS brands, coaches and consultants.\n\nNew here? Send LEAK and the link to your page. I'll reply with one specific fix, free.", "oct": "I write and build pages that sell: sales pages, landing pages, email funnels and websites for ecommerce, supplement and SaaS brands, coaches and consultants.\n\nNew here? Send LEAK and the link to your page. I'll reply with one specific fix, free.\n\nLeak Map: at least 3 leaks, each with the exact fix, in 3 working days. ₦50,000, and you pay nothing if I can't find 3. Send MAP to book."}, {"label": "Address", "plain": "Lagos, Nigeria"}, {"label": "Business hours", "plain": "Monday to Saturday, 9:00 to 19:00. Change it to the hours you really reply."}, {"label": "Website 1", "now": "https://linktr.ee/Hassanconverts"}, {"label": "Website 2", "now": "https://www.instagram.com/hassanconverts/"}, {"label": "Greeting message", "limit": 1000, "now": "Hi, thanks for messaging. I'm Hassan.\n\nIf you sent LEAK: send me the link to your sales page or offer post, and tell me what you sell and who buys it. I'll reply with one specific fix, free.\n\nFor anything else, tell me what you need and I'll get back to you as soon as I'm free.", "note": "Business tools → Greeting message → On. Send to: Everyone."}, {"label": "Away message", "limit": 1000, "now": "Thanks for your message. I'm away right now and I'll reply first thing tomorrow morning.\n\nIf it's about your page, send the link now so I can look at it before I reply.", "note": "Schedule: Outside of business hours."}, {"label": "Quick reply /leak", "limit": 1000, "now": "Thanks for sending LEAK. Send me three things:\n1. The link to your sales page or offer post\n2. What you sell and the price\n3. Where your buyers come from: ads, Instagram, WhatsApp or referrals\n\nI'll reply with one specific fix.", "note": "Business tools → Quick replies → Add. Shortcut: leak"}, {"label": "Quick reply /check", "limit": 1000, "now": "Here's the free 5 minute Leak Check: https://claude.ai/artifact/FAQTw9Zrj3V7xan42nTbkP\n\nIt shows which part of your funnel is losing buyers. Tell me your biggest leak when you're done.", "note": "Shortcut: check"}, {"label": "Quick reply /hooks", "limit": 1000, "now": "Here's the free Hook Scorecard: https://raw.githubusercontent.com/agorohassan21/Hassanconverts-content/main/free/The_Hook_Scorecard.pdf\n\nScore your next first line before you post it.", "note": "Shortcut: hooks"}, {"label": "Quick reply /map", "limit": 1000, "now": "The Leak Map: I go through your sales page, your posts or ads, and how people pay. You get at least 3 specific leaks, each with the exact fix, in 3 working days.\n\nPrice: ₦50,000. If I can't find 3 real leaks, you pay nothing.\n\nWant to book? Send me your links and I'll send the payment details.", "when": "Add on Wed 21 Oct", "note": "Shortcut: map"}, {"label": "Quick reply /followup", "limit": 1000, "now": "Hi [name], checking in on the fix I sent. Did you get a chance to try it? If anything was unclear, ask me here.", "note": "Shortcut: followup. Send it 3 days after the first fix."}, {"label": "Labels", "plain": "New lead · Sent LEAK · Leak Map booked · Paid · Follow up · Past client"}, {"label": "Catalog item", "limit": 200, "now": "At least 3 specific leaks on your sales page, posts or ads and payment, each with the exact fix. Delivered in 3 working days. If I can't find 3 real leaks, you pay nothing.", "when": "Add on Wed 21 Oct", "note": "Catalog → Add new item. Name: Leak Map. Price: ₦50,000."}]}, {"id": "linktree", "name": "Linktree", "where": "linktr.ee/admin", "fields": [{"label": "Profile title", "limit": 30, "now": "Agoro Hassan"}, {"label": "Bio", "limit": 80, "now": "I write and build pages and email funnels that sell. Lagos, Nigeria."}, {"label": "Link 1 title", "now": "Free Hook Scorecard (PDF)", "note": "For any business. URL below."}, {"label": "Link 1 URL", "now": "https://raw.githubusercontent.com/agorohassan21/Hassanconverts-content/main/free/The_Hook_Scorecard.pdf"}, {"label": "Link 2 title", "now": "Free Leak Check for coaches", "note": "URL below. It only works for visitors after you open the Leak Check, tap Share and choose Anyone with the link."}, {"label": "Link 2 URL", "now": "https://claude.ai/artifact/FAQTw9Zrj3V7xan42nTbkP"}, {"label": "Link 3 title", "now": "Chat with me on WhatsApp"}, {"label": "Link 3 URL", "now": "https://wa.me/2347064980785?text=LEAK", "note": "Opens WhatsApp with LEAK already typed."}, {"label": "Link 4 title", "now": "See a page I wrote and built: Gluvera"}, {"label": "Link 4 URL", "now": "https://7o4stores.com.ng/gluvera-herbal-tea/"}, {"label": "New top link title", "now": "Book a Leak Map: 3 leaks or you pay nothing", "when": "Add on Wed 21 Oct, at the top"}, {"label": "New top link URL", "now": "https://wa.me/2347064980785?text=MAP", "when": "Add on Wed 21 Oct"}]}], "remove": ["The “200 VSL students” line, wherever it still sits: bio, headline, About, highlights or pinned posts.", "Script counts like “500 VSL scripts”. Numbers don't sell you. Your thinking does.", "Old titles like “VSL and Funnel Conversion Specialist”.", "The Funnel Pressure Score form on Linktree. The Leak Check and the Hook Scorecard replace it.", "Old highlights about VSL training. Archive them rather than delete, in case you want them later."]};
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let mode = 'now';
+try { const m = localStorage.getItem('kit-mode'); if (m === 'now' || m === 'oct') mode = m; else if (new Date() >= new Date('2026-10-21T00:00:00+01:00')) mode = 'oct'; } catch (e) {}
+let ticks = {};
+try { ticks = JSON.parse(localStorage.getItem('kit-ticks') || '{}') || {}; } catch (e) {}
+
+function copyBtn(id){ return `<button class="copy" type="button" data-copy="${id}">Copy</button>`; }
+let store = {}, n = 0;
+function box(text){ const id = 't' + (n++); store[id] = text; return `<div class="row"><pre class="text" id="${id}">${esc(text)}</pre>${copyBtn(id)}</div>`; }
+
+function render(){
+  store = {}; n = 0;
+  $('#nav').innerHTML = ['<a href="#remove">Remove</a>'].concat(DATA.platforms.map(p => `<a href="#${p.id}">${esc(p.name)}</a>`)).join('');
+  $('#removelist').innerHTML = DATA.remove.map((r, i) => `<label><input type="checkbox" id="rm${i}" ${ticks['rm'+i] ? 'checked' : ''}><span>${esc(r)}</span></label>`).join('');
+  $('#platforms').innerHTML = DATA.platforms.map(p => {
+    const cards = p.fields.map(f => {
+      const later = f.when && mode === 'now';
+      const txt = (mode === 'oct' && f.oct) ? f.oct : f.now;
+      const chips = [];
+      if (f.when) chips.push(`<span class="chip when">${esc(f.when)}</span>`);
+      if (mode === 'oct' && f.oct) chips.push('<span class="chip changed">Launch version</span>');
+      if (f.limit && txt){ const len = txt.length; chips.push(`<span class="chip ${len > f.limit ? 'over' : 'ok'}">${len} / ${f.limit}</span>`); }
+      let body = '';
+      if (f.plain) body += `<p class="plain">${esc(f.plain)}</p>`;
+      if (txt) body += box(txt);
+      if (f.stories) body += '<ul class="stories">' + f.stories.map(s => `<li>${box(s)}</li>`).join('') + '</ul>';
+      if (f.links) body += '<div class="links">' + f.links.map(([t, u]) => `<div class="note">${esc(t)}</div>${box(u)}`).join('') + '</div>';
+      if (f.note) body += `<p class="note">${esc(f.note)}</p>`;
+      if (later) body = `<p class="note">Leave this for launch morning. Switch to “From Wed 21 Oct” above to see it.</p>` + body;
+      return `<div class="card"><div class="top"><span class="lbl">${esc(f.label)}</span><span class="chips">${chips.join('')}</span></div>${body}</div>`;
+    }).join('');
+    return `<section id="${p.id}"><div class="sechead"><h2>${esc(p.name)}</h2><p class="where">${esc(p.where)}</p></div>${cards}</section>`;
+  }).join('');
+  $('#m-now').setAttribute('aria-pressed', mode === 'now');
+  $('#m-oct').setAttribute('aria-pressed', mode === 'oct');
+  $('#modehint').textContent = mode === 'now' ? 'The Leak Map stays off your profiles until launch morning.' : 'Launch versions: Leak Map lines added. Use these from Wed 21 Oct.';
+}
+function setMode(m){ mode = m; try { localStorage.setItem('kit-mode', m); } catch (e) {} render(); }
+$('#m-now').addEventListener('click', () => setMode('now'));
+$('#m-oct').addEventListener('click', () => setMode('oct'));
+document.addEventListener('change', e => { if (e.target.id && e.target.id.startsWith('rm')){ ticks[e.target.id] = e.target.checked; try { localStorage.setItem('kit-ticks', JSON.stringify(ticks)); } catch (err) {} } });
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const id = b.dataset.copy, text = store[id];
+  const ok = () => { b.textContent = 'Copied'; b.classList.add('done'); setTimeout(() => { b.textContent = 'Copy'; b.classList.remove('done'); }, 1600); };
+  const fallback = () => { const el = document.getElementById(id); const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; setTimeout(() => { b.textContent = 'Copy'; }, 1600); };
+  try { navigator.clipboard.writeText(text).then(ok, fallback); } catch (err) { fallback(); }
+});
+render();
+</script>
+</body></html>
