@@ -24,7 +24,14 @@ On a phone, open the link in Chrome, tap the three dots, then **Desktop site**, 
 
 **media/reels/** holds the swipe videos with music (for example d03a.mp4). Use them for TikTok, Instagram Reels, Facebook Reels, YouTube Shorts and WhatsApp status.
 
-**captions/** holds one text file per post: the Instagram caption, the LinkedIn caption, the TikTok and Reel caption, and the post time.
+**captions/** holds one text file per post: the Instagram caption, the LinkedIn caption, the TikTok and Reel caption, and the post time. Some files have a **NEWS CHECK** line (a quick thing to confirm before a news post goes out) or a **FILM OPTION** line.
+
+**FILM_SCRIPTS.md** has the scripts for the five posts that work best as a video of you (Days 21, 35, 42, 49 and 56). Each one already has a designed version ready, so filming is optional.
+
+## What's ready
+
+Days 1 to 60 (Mon 28 Sep to Thu 26 Nov) are fully built: slides, videos, LinkedIn PDFs, captions and schedule rows.
+Days 61 to 90 (Fri 27 Nov to Sat 26 Dec) are planned in plan90.xlsx but not built yet.
 
 Posts already scheduled in Buffer keep publishing on their own. Buffer does not depend on Claude.
 

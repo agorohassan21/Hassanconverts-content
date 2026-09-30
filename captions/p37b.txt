@@ -1,0 +1,30 @@
+Day 37 evening: WhatsApp started charging businesses for replies.
+Tue 3 Nov 2026: Instagram carousel 19:30, TikTok 20:30
+SLIDES: media/v2/p37b/ (post in number order)
+VIDEO FILE (TikTok): media/reels/p37b.mp4
+
+NEWS CHECK: confirm Meta hasn't changed WhatsApp service message pricing again since October.
+
+INSTAGRAM CAROUSEL CAPTION
+
+Since 1 October, WhatsApp charges businesses for replies on the WhatsApp Business Platform.
+
+Meta now charges for service messages, which had been free since November 2024 (Meta for Developers). Each number gets 1,000 free service messages a month, then replies are charged at country rates (Mobile Ecosystem Forum, respond.io).
+
+This hits API tools and chatbots, not the free WhatsApp Business app on your phone.
+
+If you use a tool: check your volume and put your price and FAQs on one page instead of 20 messages.
+
+#whatsappbusiness #smallbusiness #digitalmarketing #onlinecoach #businessnews
+
+TIKTOK / REEL CAPTION
+
+Since 1 October, WhatsApp charges businesses for replies on the WhatsApp Business Platform.
+
+Meta now charges for service messages, which had been free since November 2024 (Meta for Developers). Each number gets 1,000 free service messages a month, then replies are charged at country rates (Mobile Ecosystem Forum, respond.io).
+
+This hits API tools and chatbots, not the free WhatsApp Business app on your phone.
+
+If you use a tool: check your volume and put your price and FAQs on one page instead of 20 messages.
+
+#whatsappbusiness #smallbusiness #digitalmarketing #onlinecoach #businessnews
