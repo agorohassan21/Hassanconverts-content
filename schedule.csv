@@ -3,15 +3,15 @@ Day,Date,Weekday,Time (Lagos),Platform,Format,Post,Title,Files,Caption file,How 
 1,2026-09-28,Mon,13:00,LinkedIn,PDF document (carousel),D01A,Your danfo door is jammed,media/v2/d01a/d01a.pdf,captions/d01a.txt,Automatic,Posted
 1,2026-09-28,Mon,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D01B,Buyers have a name for your sales page,media/v2/d01b/01.jpg to last,captions/d01b.txt,Automatic,Posted
 2,2026-09-29,Tue,07:30,Instagram (auto shares to Facebook),Carousel (slides in order),D02A,Does your funnel look like one chance?,media/v2/d02a/01.jpg to last,captions/d02a.txt,Automatic,Posted
-2,2026-09-29,Tue,08:00,LinkedIn,PDF document (carousel),D02A,Does your funnel look like one chance?,media/v2/d02a/d02a.pdf,captions/d02a.txt,Automatic,In Buffer
+2,2026-09-29,Tue,08:00,LinkedIn,PDF document (carousel),D02A,Does your funnel look like one chance?,media/v2/d02a/d02a.pdf,captions/d02a.txt,Automatic,Posted
 2,2026-09-29,Tue,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D02B,The webinar signup page benchmark,media/v2/d02b/01.jpg to last,captions/d02b.txt,Automatic,Posted
-3,2026-09-30,Wed,07:30,Instagram (auto shares to Facebook),Carousel (slides in order),D03A,“I'll join the next cohort” is not a no,media/v2/d03a/01.jpg to last,captions/d03a.txt,Automatic,In Buffer
-3,2026-09-30,Wed,08:00,LinkedIn,PDF document (carousel),D03A,“I'll join the next cohort” is not a no,media/v2/d03a/d03a.pdf,captions/d03a.txt,Automatic,In Buffer
-3,2026-09-30,Wed,12:30,TikTok,Video with music,D03A,“I'll join the next cohort” is not a no,media/reels/d03a.mp4,captions/d03a.txt,Buffer ping: you post it and add a sound,In Buffer
-3,2026-09-30,Wed,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D03B,Why pastors announce it three times,media/v2/d03b/01.jpg to last,captions/d03b.txt,Buffer ping: you post it and add a sound,In Buffer
-3,2026-09-30,Wed,20:30,TikTok,Video with music,D03B,Why pastors announce it three times,media/reels/d03b.mp4,captions/d03b.txt,Buffer ping: you post it and add a sound,In Buffer
-4,2026-10-01,Thu,07:30,Instagram (auto shares to Facebook),Reel (video with music),D04A,Coach DM Bingo,media/reels/d04a.mp4,captions/d04a.txt,Buffer ping: you post it and add a sound,In Buffer
-4,2026-10-01,Thu,08:00,LinkedIn,PDF document (carousel),D04B,What your sales page says vs what buyers hear,media/v2/d04b/d04b.pdf,captions/d04b.txt,Automatic,In Buffer
+3,2026-09-30,Wed,07:30,Instagram (auto shares to Facebook),Carousel (slides in order),D03A,“I'll join the next cohort” is not a no,media/v2/d03a/01.jpg to last,captions/d03a.txt,Automatic,Posted
+3,2026-09-30,Wed,08:00,LinkedIn,PDF document (carousel),D03A,“I'll join the next cohort” is not a no,media/v2/d03a/d03a.pdf,captions/d03a.txt,Automatic,Posted
+3,2026-09-30,Wed,12:30,TikTok,Video with music,D03A,“I'll join the next cohort” is not a no,media/reels/d03a.mp4,captions/d03a.txt,Buffer ping: you post it and add a sound,Posted
+3,2026-09-30,Wed,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D03B,Why pastors announce it three times,media/v2/d03b/01.jpg to last,captions/d03b.txt,Buffer ping: you post it and add a sound,Posted
+3,2026-09-30,Wed,20:30,TikTok,Video with music,D03B,Why pastors announce it three times,media/reels/d03b.mp4,captions/d03b.txt,Buffer ping: you post it and add a sound,Posted
+4,2026-10-01,Thu,07:30,Instagram (auto shares to Facebook),Reel (video with music),D04A,Coach DM Bingo,media/reels/d04a.mp4,captions/d04a.txt,Buffer ping: you post it and add a sound,Posted
+4,2026-10-01,Thu,08:00,LinkedIn,PDF document (carousel),D04B,What your sales page says vs what buyers hear,media/v2/d04b/d04b.pdf,captions/d04b.txt,Automatic,Posted
 4,2026-10-01,Thu,12:30,TikTok,Video with music,D04A,Coach DM Bingo,media/reels/d04a.mp4,captions/d04a.txt,Buffer ping: you post it and add a sound,In Buffer
 4,2026-10-01,Thu,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D04B,What your sales page says vs what buyers hear,media/v2/d04b/01.jpg to last,captions/d04b.txt,Buffer ping: you post it and add a sound,In Buffer
 4,2026-10-01,Thu,20:30,TikTok,Video with music,D04B,What your sales page says vs what buyers hear,media/reels/d04b.mp4,captions/d04b.txt,Buffer ping: you post it and add a sound,In Buffer
@@ -35,7 +35,7 @@ Day,Date,Weekday,Time (Lagos),Platform,Format,Post,Title,Files,Caption file,How 
 8,2026-10-05,Mon,12:30,TikTok,Video with music,D08A,No testimonials yet? 9 ways to prove you're real,media/reels/d08a.mp4,captions/d08a.txt,Buffer ping: you post it and add a sound,In Buffer
 8,2026-10-05,Mon,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D08B,What owners say after boosting,media/v2/d08b/01.jpg to last,captions/d08b.txt,Buffer ping: you post it and add a sound,In Buffer
 8,2026-10-05,Mon,20:30,TikTok,Video with music,D08B,What owners say after boosting,media/reels/d08b.mp4,captions/d08b.txt,Buffer ping: you post it and add a sound,In Buffer
-9,2026-10-06,Tue,07:30,Instagram (auto shares to Facebook),Reel (video with music),D09A,7 questions before you pay any marketer,media/reels/d09a.mp4,captions/d09a.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
+9,2026-10-06,Tue,07:30,Instagram (auto shares to Facebook),Reel (video with music),D09A,7 questions before you pay any marketer,media/reels/d09a.mp4,captions/d09a.txt,Buffer ping: you post it and add a sound,In Buffer
 9,2026-10-06,Tue,08:00,LinkedIn,PDF document (carousel),D09A,7 questions before you pay any marketer,media/v2/d09a/d09a.pdf,captions/d09a.txt,Automatic,In Buffer
 9,2026-10-06,Tue,12:30,TikTok,Video with music,D09A,7 questions before you pay any marketer,media/reels/d09a.mp4,captions/d09a.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
 9,2026-10-06,Tue,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D09B,Some agencies are agberos with a laptop,media/v2/d09b/01.jpg to last,captions/d09b.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
@@ -61,7 +61,7 @@ Day,Date,Weekday,Time (Lagos),Platform,Format,Post,Title,Files,Caption file,How 
 13,2026-10-10,Sat,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D13B,Do sales funnels really work?,media/v2/d13b/01.jpg to last,captions/d13b.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
 13,2026-10-10,Sat,20:30,TikTok,Video with music,D13B,Do sales funnels really work?,media/reels/d13b.mp4,captions/d13b.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
 14,2026-10-11,Sun,07:30,Instagram (auto shares to Facebook),Reel (video with music),D14A,Your early bird discount,media/reels/d14a.mp4,captions/d14a.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
-14,2026-10-11,Sun,08:00,LinkedIn,PDF document (carousel),D14A,Your early bird discount,media/v2/d14a/d14a.pdf,captions/d14a.txt,Automatic,"Approved, not yet in Buffer"
+14,2026-10-11,Sun,08:00,LinkedIn,PDF document (carousel),D14A,Your early bird discount,media/v2/d14a/d14a.pdf,captions/d14a.txt,Automatic,In Buffer
 14,2026-10-11,Sun,12:30,TikTok,Video with music,D14A,Your early bird discount,media/reels/d14a.mp4,captions/d14a.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
 14,2026-10-11,Sun,19:30,Instagram (auto shares to Facebook),Carousel (slides in order),D14B,What your buyers read about coaches,media/v2/d14b/01.jpg to last,captions/d14b.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
 14,2026-10-11,Sun,20:30,TikTok,Video with music,D14B,What your buyers read about coaches,media/reels/d14b.mp4,captions/d14b.txt,Buffer ping: you post it and add a sound,"Approved, not yet in Buffer"
